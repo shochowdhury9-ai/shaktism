@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eternal Portal of Shaktism | शाक्त सनातन धाम</title>
+<meta name="description" content="Navadurga, Dasamahavidya, Shakti Peethas, virtual mandir, mantras and the eternal glory of Adi Shakti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="nav">
+  <a class="brand" href="#hero">🔱 <span>शक्ति धाम</span></a>
+  <button id="burger" aria-label="Menu">☰</button>
+  <nav id="menu">
+    <a href="#navadurga">नवदुर्गा</a>
+    <a href="#mahavidya">दशमहाविद्या</a>
+    <a href="#peethas">शक्तिपीठ</a>
+    <a href="#mandir">आभासी मंदिर</a>
+    <a href="#mantras">मंत्र</a>
+    <a href="#miracles">चमत्कार</a>
+    <a href="#dharma">धर्म-संकल्प</a>
+  </nav>
+</header>
+
+<!-- 1. HERO -->
+<section id="hero">
+  <canvas id="embers"></canvas>
+  <svg class="yantra" viewBox="-200 -200 400 400" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1.4">
+      <circle r="190"/><circle r="175"/><circle r="120" stroke-dasharray="3 6"/>
+      <g id="petals"></g>
+      <polygon points="0,-110 95,55 -95,55"/>
+      <polygon points="0,110 95,-55 -95,-55"/>
+      <polygon points="0,-75 65,38 -65,38"/>
+      <polygon points="0,75 65,-38 -65,-38"/>
+      <circle r="6" fill="currentColor"/>
+    </g>
+  </svg>
+  <div class="hero-text">
+    <p class="om">ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे</p>
+    <h1>Eternal Portal<br>of <em>Shaktism</em></h1>
+    <p class="sub">या देवी सर्वभूतेषु शक्तिरूपेण संस्थिता ।<br>नमस्तस्यै नमस्तस्यै नमस्तस्यै नमो नमः ॥</p>
+    <div class="cta">
+      <a class="btn" href="#mandir">🪔 मंदिर में प्रवेश करें</a>
+      <a class="btn ghost" href="#navadurga">यात्रा आरम्भ करें</a>
+    </div>
+    <p class="jai">जय माता दी</p>
+  </div>
+  <a class="scroll" href="#navadurga">⌄</a>
+</section>
+
+<!-- 2. NAVADURGA -->
+<section id="navadurga" class="sec">
+  <h2 class="title">नवदुर्गा <small>The Nine Forms</small></h2>
+  <p class="lead">नवरात्रि के नौ दिन, देवी के नौ स्वरूप। कार्ड पर क्लिक करके ध्यान मंत्र देखें।</p>
+  <div class="grid" id="navaGrid"></div>
+</section>
+
+<!-- 3. DASAMAHAVIDYA -->
+<section id="mahavidya" class="sec dark">
+  <h2 class="title">दशमहाविद्या <small>The Ten Wisdom Goddesses</small></h2>
+  <p class="lead">ज्ञान, शक्ति और मोक्ष की दस दिव्य धाराएँ।</p>
+  <div class="grid" id="vidyaGrid"></div>
+</section>
+
+<!-- 4. SHAKTI PEETHAS -->
+<section id="peethas" class="sec">
+  <h2 class="title">शक्तिपीठ <small>Seats of the Goddess</small></h2>
+  <p class="lead">सती के अंगों व आभूषणों से पावन हुए तीर्थ। सूची चुनें:</p>
+  <div class="tabs" id="peethaTabs"></div>
+  <div id="peethaBody"></div>
+  <p class="note">⚠️ अलग-अलग ग्रंथों और परम्पराओं में नाम व क्रम भिन्न मिलते हैं; यहाँ प्रचलित सूचियाँ दी गई हैं।</p>
+</section>
+
+<!-- 5. VIRTUAL MANDIR -->
+<section id="mandir" class="sec dark">
+  <h2 class="title">आभासी मंदिर <small>Virtual Mandir</small></h2>
+  <p class="lead">मन को शांत करें। देवी चुनें, दीप जलाएँ, पुष्प व धूप अर्पित करें, घंटा बजाएँ और माला जपें।</p>
+  <div class="mandir-wrap">
+    <div class="temple" id="temple">
+      <div class="arch">
+        <div class="aura"></div>
+        <div class="murti" id="murti">
+          <img id="murtiImg" alt="" hidden>
+          <svg id="murtiSvg" viewBox="-100 -100 200 200"><g fill="none" stroke="currentColor" stroke-width="1.5" id="lotus"></g><text id="murtiOm" text-anchor="middle" dominant-baseline="middle" font-size="56" fill="currentColor" stroke="none">ॐ</text></svg>
+        </div>
+        <h3 id="deityName">माँ दुर्गा</h3>
+        <p id="deityMantra" class="mini"></p>
+      </div>
+      <div class="platform">
+        <div class="diya" id="diyaL"><i></i></div>
+        <div class="thali" id="thali">🪔</div>
+        <div class="diya" id="diyaR"><i></i></div>
+      </div>
+      <div id="fx"></div>
+    </div>
+    <div class="panel">
+      <label>देवी चुनें
+        <select id="deitySel"></select>
+      </label>
+      <label class="upload">अपनी माँ की तस्वीर लगाएँ (सिर्फ आपके ब्राउज़र में)
+        <input type="file" id="upl" accept="image/*">
+      </label>
+      <div class="acts">
+        <button data-act="diya">🪔 दीप</button>
+        <button data-act="flower">🌺 पुष्प</button>
+        <button data-act="incense">🌫️ धूप</button>
+        <button data-act="bell">🔔 घंटा</button>
+        <button data-act="aarti">🔥 आरती</button>
+      </div>
+      <div class="mala">
+        <div class="count"><span id="malaCount">0</span><small>/ 108</small></div>
+        <div class="beads" id="beads"></div>
+        <button class="btn" id="japaBtn">📿 मंत्र जपें</button>
+        <button class="btn ghost" id="japaReset">पुनः आरम्भ</button>
+        <p>माला पूर्ण: <b id="malaRounds">0</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. MANTRAS -->
+<section id="mantras" class="sec">
+  <h2 class="title">मंत्र संग्रह <small>Mantras, Stotras &amp; More</small></h2>
+  <div class="tabs" id="mantraTabs"></div>
+  <div id="mantraBody" class="mgrid"></div>
+  <p class="note">🙏 तांत्रिक/बीज मंत्रों का जप योग्य गुरु के मार्गदर्शन व दीक्षा से करना श्रेष्ठ माना गया है।</p>
+</section>
+
+<!-- 7. MIRACLES -->
+<section id="miracles" class="sec dark">
+  <h2 class="title">माँ के चमत्कार <small>Miracles of Mata</small></h2>
+  <p class="lead">भक्तों की श्रद्धा, लोककथाओं और मान्यताओं में बसी कथाएँ।</p>
+  <div class="story-list" id="stories"></div>
+  <p class="note">ये कथाएँ आस्था और परम्परा पर आधारित हैं।</p>
+</section>
+
+<!-- 8. DHARMA -->
+<section id="dharma" class="sec final">
+  <h2 class="title">धर्म-संकल्प <small>Carry the Teachings</small></h2>
+  <blockquote>
+    धर्म एव हतो हन्ति धर्मो रक्षति रक्षितः ।<br>
+    तस्माद्धर्मो न हन्तव्यो मा नो धर्मो हतोऽवधीत् ॥
+    <cite>— मनुस्मृति</cite>
+  </blockquote>
+  <p class="lead">जो धर्म का नाश करता है, धर्म उसका नाश कर देता है; जो धर्म की रक्षा करता है, धर्म उसकी रक्षा करता है। इसलिए धर्म का त्याग न करें।</p>
+  <div class="grid small" id="teachGrid"></div>
+  <div class="pledge">
+    <h3>माँ के चरणों में संकल्प</h3>
+    <div id="pledges"></div>
+    <p id="pledgeMsg"></p>
+  </div>
+  <p class="jai big">जय माँ आदिशक्ति 🔱</p>
+</section>
+
+<footer>
+  <p>सर्वमङ्गलमाङ्गल्ये शिवे सर्वार्थसाधिके । शरण्ये त्र्यम्बके गौरि नारायणि नमोऽस्तु ते ॥</p>
+  <small>Made with devotion · जय माता दी</small>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

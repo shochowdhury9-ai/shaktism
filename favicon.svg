@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="60%">
+      <stop offset="0" stop-color="#8a1226"/>
+      <stop offset="0.6" stop-color="#3a0714"/>
+      <stop offset="1" stop-color="#0d0307"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#ffe08a"/>
+      <stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe9a8"/>
+      <stop offset="1" stop-color="#d9962b"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  <!-- cosmic swirl -->
+  <g fill="none" stroke="#ff4d2e" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+    <path d="M32 8 C48 10 56 26 50 40 C46 49 36 54 28 50"/>
+    <path d="M32 56 C16 54 8 38 14 24 C18 15 28 10 36 14"/>
+  </g>
+  <!-- shri yantra core: two interlocked triangles -->
+  <g fill="none" stroke="url(#gold)" stroke-width="2.2" stroke-linejoin="round">
+    <polygon points="32,15 47,41 17,41"/>
+    <polygon points="32,49 17,23 47,23"/>
+  </g>
+  <!-- energy glow -->
+  <circle cx="32" cy="32" r="11" fill="url(#core)"/>
+  <circle cx="32" cy="32" r="3" fill="#fff"/>
+  <!-- stars -->
+  <g fill="#ffe9a8">
+    <circle cx="12" cy="14" r="1.2"/><circle cx="53" cy="12" r="1"/>
+    <circle cx="55" cy="50" r="1.2"/><circle cx="10" cy="51" r="1"/>
+  </g>
+</svg>

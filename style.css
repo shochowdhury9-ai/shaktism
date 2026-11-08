@@ -1,0 +1,155 @@
+:root{
+  --bg:#12050a; --bg2:#1d0810; --maroon:#5a0d1a; --kum:#c1121f; --gold:#e8b84a; --gold2:#ffdf8a;
+  --text:#f6e9d2; --muted:#c9b393;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Serif Devanagari','Tiro Devanagari Hindi',serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Cinzel Decorative','Tiro Devanagari Hindi',serif;color:var(--gold)}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.4rem;background:linear-gradient(#12050aee,#12050a00);backdrop-filter:blur(6px)}
+.brand{font-family:'Tiro Devanagari Hindi';font-size:1.3rem;color:var(--gold)}
+#menu a{margin-left:1.1rem;color:var(--muted);font-size:.95rem;transition:.3s}
+#menu a:hover{color:var(--gold2);text-shadow:0 0 10px var(--gold)}
+#burger{display:none;background:none;border:0;color:var(--gold);font-size:1.7rem}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;
+  background:radial-gradient(circle at 50% 40%,#7a0f20 0%,#3a0714 40%,#12050a 80%)}
+#embers{position:absolute;inset:0;width:100%;height:100%}
+.yantra{position:absolute;width:min(95vmin,820px);color:var(--gold);opacity:.22;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-text{position:relative;z-index:2;padding:1rem}
+.om{color:var(--gold2);letter-spacing:.15em;margin-bottom:1rem;animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{text-shadow:0 0 18px var(--gold);opacity:.8}}
+#hero h1{font-size:clamp(2.2rem,7vw,5.2rem);line-height:1.1;text-shadow:0 0 30px #c1121f99}
+#hero h1 em{color:var(--kum);font-style:normal;text-shadow:0 0 25px #ff2d3d}
+.sub{margin:1.5rem 0;color:var(--muted);font-size:clamp(1rem,2.2vw,1.3rem)}
+.cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.6rem;border:1px solid var(--gold);border-radius:40px;background:linear-gradient(135deg,var(--kum),var(--maroon));color:#fff;font:inherit;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 24px #e8b84a77}
+.btn.ghost{background:transparent;color:var(--gold)}
+.jai{margin-top:1.6rem;color:var(--gold);font-size:1.4rem;letter-spacing:.2em}
+.scroll{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);font-size:2rem;color:var(--gold);animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* SECTIONS */
+.sec{padding:6rem 1.4rem 4rem;max-width:1200px;margin:auto}
+.sec.dark{max-width:none;background:linear-gradient(var(--bg2),#0b0306)}
+.sec.dark>*{max-width:1200px;margin-left:auto;margin-right:auto}
+.title{font-size:clamp(1.8rem,4vw,3rem);text-align:center}
+.title small{display:block;font-size:.4em;color:var(--muted);letter-spacing:.3em;margin-top:.3rem;font-family:'Cinzel'}
+.title::after{content:"❖";display:block;color:var(--kum);font-size:1rem;margin:.6rem 0}
+.lead{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 2.2rem}
+.note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:2rem}
+.reveal{opacity:0;transform:translateY(30px);transition:1s}
+.reveal.in{opacity:1;transform:none}
+
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.3rem}
+.grid.small{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.card{position:relative;padding:1.5rem;border:1px solid #e8b84a44;border-radius:16px;background:linear-gradient(160deg,#2a0a14,#150509);cursor:pointer;transition:.4s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,var(--c,#c1121f)55,transparent 60%);opacity:.5;transition:.4s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 10px 30px #c1121f55}
+.card>*{position:relative}
+.card .n{font-family:'Cinzel';color:var(--gold);font-size:.8rem;letter-spacing:.2em}
+.card h3{font-size:1.35rem;margin:.3rem 0;font-family:'Tiro Devanagari Hindi'}
+.card .en{color:var(--muted);font-family:'Cinzel';font-size:.85rem}
+.card p{margin-top:.6rem;font-size:.95rem}
+.card .more{max-height:0;overflow:hidden;transition:.5s;color:var(--gold2);font-size:.95rem}
+.card.open .more{max-height:300px;margin-top:.7rem;padding-top:.7rem;border-top:1px dashed #e8b84a55}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:.4rem;box-shadow:0 0 8px var(--c)}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:1.8rem}
+.tabs button{padding:.5rem 1.2rem;border-radius:30px;border:1px solid #e8b84a66;background:transparent;color:var(--muted);font:inherit;cursor:pointer;transition:.3s}
+.tabs button.on,.tabs button:hover{background:var(--kum);color:#fff;border-color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.chip{padding:.4rem .9rem;border:1px solid #e8b84a44;border-radius:30px;background:#1d0810;font-size:.95rem}
+.chip b{color:var(--gold)}
+table{width:100%;border-collapse:collapse;background:#1d0810;border-radius:12px;overflow:hidden}
+th,td{padding:.7rem 1rem;border-bottom:1px solid #e8b84a22;text-align:left}
+th{background:var(--maroon);color:var(--gold)}
+.table-wrap{overflow-x:auto}
+.desc{text-align:center;color:var(--muted);margin-bottom:1.4rem}
+
+/* MANDIR */
+.mandir-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:start}
+.temple{position:relative;border-radius:200px 200px 16px 16px;border:2px solid var(--gold);background:linear-gradient(#3a0714,#12050a);padding:2rem 1rem 1rem;text-align:center;overflow:hidden;min-height:520px}
+.temple.lit{box-shadow:0 0 70px #e8b84a55 inset,0 0 40px #c1121f55}
+.arch{position:relative}
+.aura{position:absolute;left:50%;top:80px;width:300px;height:300px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(#ffdf8a44,transparent 70%);opacity:0;transition:1s}
+.temple.lit .aura{opacity:1;animation:pulse 3s infinite}
+@keyframes pulse{50%{transform:translateX(-50%) scale(1.15)}}
+.murti{position:relative;width:230px;height:230px;margin:0 auto;border-radius:50%;border:3px solid var(--gold);display:grid;place-items:center;background:radial-gradient(#7a0f20,#2a0a14);color:var(--gold);overflow:hidden}
+.murti svg{width:100%;height:100%}
+.murti img{width:100%;height:100%;object-fit:cover}
+.murti.ring{animation:spin 20s linear infinite}
+#deityName{margin-top:1rem;font-family:'Tiro Devanagari Hindi'}
+.mini{color:var(--gold2);font-size:.95rem;padding:0 1rem}
+.platform{display:flex;justify-content:center;align-items:flex-end;gap:2rem;margin-top:1.4rem}
+.thali{font-size:2.6rem;transition:.5s}
+.thali.aarti{animation:aarti 2s linear infinite}
+@keyframes aarti{0%{transform:translate(0,0)}25%{transform:translate(18px,-14px)}50%{transform:translate(0,-26px)}75%{transform:translate(-18px,-14px)}100%{transform:translate(0,0)}}
+.diya{position:relative;width:46px;height:20px;background:#b5651d;border-radius:0 0 46px 46px}
+.diya i{position:absolute;left:50%;bottom:20px;width:14px;height:30px;transform:translateX(-50%) scale(0);transform-origin:bottom;background:radial-gradient(#fff,#ffdf8a 40%,#ff8a00 70%,transparent);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;filter:blur(1px);transition:.4s}
+.temple.lit .diya i{transform:translateX(-50%) scale(1);animation:flame .15s infinite alternate}
+@keyframes flame{to{transform:translateX(-50%) scale(1.1,.92) skewX(4deg)}}
+#fx{position:absolute;inset:0;pointer-events:none}
+.petal{position:absolute;top:-20px;font-size:1.4rem;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(560px) rotate(360deg);opacity:.2}}
+.smoke{position:absolute;bottom:90px;width:12px;height:12px;border-radius:50%;background:#ffffff33;filter:blur(6px);animation:rise 5s ease-out forwards}
+@keyframes rise{to{transform:translate(var(--dx),-340px) scale(8);opacity:0}}
+.panel{display:flex;flex-direction:column;gap:1.2rem}
+.panel label{display:flex;flex-direction:column;gap:.4rem;color:var(--muted)}
+select,input[type=file]{padding:.6rem;border-radius:10px;border:1px solid #e8b84a66;background:#1d0810;color:var(--text);font:inherit}
+.acts{display:flex;flex-wrap:wrap;gap:.6rem}
+.acts button{flex:1 1 90px;padding:.8rem;border-radius:12px;border:1px solid var(--gold);background:#2a0a14;color:var(--text);font:inherit;cursor:pointer;transition:.3s}
+.acts button:hover{background:var(--kum)}
+.mala{padding:1.2rem;border:1px solid #e8b84a44;border-radius:16px;background:#1d0810;text-align:center}
+.count{font-family:'Cinzel Decorative';font-size:3rem;color:var(--gold)}
+.count small{font-size:1rem;color:var(--muted)}
+.beads{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;margin:.8rem 0}
+.beads i{width:7px;height:7px;border-radius:50%;background:#5a0d1a;transition:.2s}
+.beads i.on{background:var(--gold);box-shadow:0 0 6px var(--gold)}
+.mala .btn{margin:.3rem}
+
+/* MANTRAS */
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.2rem}
+.mcard{padding:1.3rem;border-radius:14px;border:1px solid #e8b84a44;background:#1d0810}
+.mcard h4{color:var(--gold);font-family:'Tiro Devanagari Hindi';font-size:1.15rem}
+.mcard .skt{margin:.7rem 0;font-size:1.1rem;color:var(--gold2);white-space:pre-line}
+.mcard small{color:var(--muted)}
+.mcard button{margin-top:.6rem;padding:.3rem .9rem;border-radius:20px;border:1px solid var(--gold);background:none;color:var(--gold);cursor:pointer;font:inherit}
+.mcard.empty .skt{color:var(--muted);font-size:.95rem}
+
+/* MIRACLES */
+.story-list{display:grid;gap:1.4rem}
+.story{display:grid;grid-template-columns:90px 1fr;gap:1.2rem;padding:1.5rem;border-left:4px solid var(--kum);background:#1d0810;border-radius:0 14px 14px 0}
+.story .ic{font-size:3rem;text-align:center}
+.story h3{font-family:'Tiro Devanagari Hindi'}
+.story .where{color:var(--muted);font-size:.85rem;font-family:'Cinzel'}
+
+/* DHARMA */
+.final{text-align:center;background:radial-gradient(circle at 50% 0,#5a0d1a55,transparent 60%)}
+blockquote{margin:1rem auto 1.5rem;max-width:760px;padding:2rem;font-size:clamp(1.2rem,3vw,1.8rem);color:var(--gold2);border:1px solid var(--gold);border-radius:18px;background:#1d0810;box-shadow:0 0 50px #c1121f44}
+cite{display:block;margin-top:.6rem;color:var(--muted);font-size:.9rem}
+.final .card{cursor:default;text-align:left}
+.pledge{margin:3rem auto 0;max-width:640px;padding:1.6rem;border:1px dashed var(--gold);border-radius:16px}
+#pledges{display:flex;flex-direction:column;gap:.6rem;margin:1rem 0;text-align:left}
+#pledges label{display:flex;gap:.7rem;align-items:flex-start;cursor:pointer}
+#pledges input{accent-color:var(--kum);margin-top:.5rem;transform:scale(1.3)}
+#pledgeMsg{color:var(--gold2);min-height:1.7rem}
+.jai.big{font-size:2rem;margin-top:2.5rem;font-family:'Tiro Devanagari Hindi'}
+footer{text-align:center;padding:2.5rem 1rem;color:var(--muted);border-top:1px solid #e8b84a33;background:#0b0306}
+
+@media(max-width:820px){
+  #burger{display:block}
+  #menu{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;background:#12050af2;padding:1rem}
+  #menu.open{display:flex}
+  #menu a{margin:.5rem 0}
+  .mandir-wrap{grid-template-columns:1fr}
+  .story{grid-template-columns:1fr}
+}
